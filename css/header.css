@@ -57,8 +57,6 @@ header{
     color: #aaa;
 }
 
-
-
 .nav_mobile{
     display: none;
 }
@@ -100,21 +98,31 @@ header{
         line-height: 40px;
     }
 
-    #ham_btn:checked ~ header .container .nav_mobile{
-        right: 0;
-    }
-    #ham_btn:checked ~ .body_background{
-        display: block;
-        background-color: rgba(0,0,0,0.5);
-        overflow: hidden;
-    } 
+    
     .nav_mobile{
-        width: 150px; height: 100vh; background-color: #042f59;
-        position: fixed; top: 50px; 
-        right: -150px;
+        width: 100%; height: 0;
+        overflow: hidden;
+        display: block;
+        background-color: #000000e7;
+        position: fixed; top: 50px;
         transition: all 0.5s; 
-        z-index: 999; display: block; overflow: hidden;
-        box-sizing: border-box; padding: 20px 0 0 30px;
+        z-index: 999; 
+        box-sizing: border-box; 
+        opacity: 0;
+        text-align: center;
+    }
+
+    .nav_mobile .menu a{
+        font-size: 1rem;
+        font-weight: 300;
+        color: white;
+        margin: 20px 0;
+    }
+
+    #ham_btn:checked ~ header .nav_mobile{
+        height: 100vh;
+        opacity: 1;
+        padding: 20px;
     }
 
     /*여기부터 햄버거 버튼 세부디자인*/
@@ -168,29 +176,5 @@ header{
         transform : translateY(-8px) rotate(45deg);
     }
     /*여기까지 햄버거 버튼세부디자인*/ 
-
-    #menubtn01, #menubtn02, #menubtn03, #menubtn04, #menubtn05{display: none;}
-  
-    #menubtn01:checked ~ .menu .menu01 p{height: 40px;}
-    #menubtn02:checked ~ .menu .menu02 p{margin: 5px 0; height: 30px;}
-    #menubtn03:checked ~ .menu .menu03 p{margin: 5px 0; height: 30px;}
-    #menubtn04:checked ~ .menu .menu04 p{margin: 5px 0; height: 30px;}
-    #menubtn05:checked ~ .menu .menu05 p{margin: 5px 0; height: 30px;}
-
-    #menubtn01:checked ~ .menu .menu01 label{color: #72a6d4; font-weight: 500;}
-    #menubtn02:checked ~ .menu .menu02 label{color: #72a6d4; font-weight: 500;}
-    #menubtn03:checked ~ .menu .menu03 label{color: #72a6d4; font-weight: 500;}
-    #menubtn04:checked ~ .menu .menu04 label{color: #72a6d4; font-weight: 500;}
-    #menubtn05:checked ~ .menu .menu05 label{color: #72a6d4; font-weight: 500;}
-  
-    .nav_mobile .menu div label{
-        font-size: 22px; display: block; width: 270px; height: 60px; 
-        line-height: 60px; color: white; font-weight: 400;
-    }
-    .nav_mobile .menu div p{
-        font-size: 15px; overflow: hidden; height: 0;
-        transition: all 0.3s; line-height: 40px;
-    }
-    .nav_mobile .menu div p a{color: white;}
 }
 
