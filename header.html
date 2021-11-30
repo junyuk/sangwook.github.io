@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/header.js"></script>
+    
 </head>
 <body>
-    <h2>헤더입니다</h2>
+    <input type="checkbox" id="ham_btn">
+    <!-- <button onclick="deselect()" class="body_background" id="body_background"></button> -->
+    <header>
+        <div class="logo">
+            <a href="/index.html">
+                 logo
+                <!-- <img src="img/main_logo.png" alt="main logo"> -->
+            </a>
+        </div>
+
+        <div class="ham_btn">
+            <label for="ham_btn" class="menu_trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label><!--menu_trigger-->
+        </div><!--ham_btn-->
+
+        <nav class="nav_web">
+            <div><a href="#">menu01</a></div>
+            <div><a href="#">menu02</a></div>
+            <div><a href="#">menu03</a></div>
+        </nav><!--nav_web-->
+
+        <aside class="nav_mobile">
+            <section class="menu">
+                <a href="#">메뉴 1</a>
+                <a href="#">메뉴 2</a>
+                <a href="#">메뉴 3</a>
+            </section><!--menu-->
+        </aside><!--nav_mobile-->
+    </header><!--header-->
 </body>
 </html>

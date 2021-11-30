@@ -1,0 +1,196 @@
+*{margin: 0; padding: 0;}
+li{list-style: none; display: block;}
+img{display: block;}
+a {text-decoration: none; color: black; display: block;}
+body{font-family: 'Noto Sans KR', sans-serif;}
+
+/*---------------------기본세팅-----------------------*/
+
+/* header */
+header{
+    width:100%;
+    height: 80px;
+    box-sizing: border-box;
+    /* background-color: #eee; */
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.logo{
+    width: 200px; height: 60px;
+    float: left;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+.logo a{
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#ham_btn{display: none;}
+.ham_btn{display: none;}
+
+
+
+.nav_web{
+    float: right; width: 400px; height: 60px; 
+    /* background-color: #bbb; */
+}
+.nav_web div{
+    float: left;
+    width: 33.33%;
+    height: auto;
+}
+.nav_web div a{
+    display: block;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.nav_web div:hover a{
+    color: #aaa;
+}
+
+
+
+.nav_mobile{
+    display: none;
+}
+
+
+
+
+
+
+/* media quary */
+
+/* 화면넓이 1900px이상 와이드 */
+@media (min-width:1900px){
+    .container, footer>.container, .wrap{
+        width: 1900px; margin: 0 auto;
+    }
+}
+
+/* 화면넓이 ~1024px */
+@media (max-width: 1024px){
+
+    .nav_web{display: none;}
+
+    header{
+        width: 100%; height: 50px; 
+        position: fixed;
+        top: 0; left: 0;
+        padding: 0px;
+        background-color: #fff;
+        box-shadow: 0 0 10px #ddd;
+        border-radius: 10px;
+    }
+    .logo{
+        margin: 5px 0 0 5px;
+        height: 40px; box-sizing: border-box;
+    }
+    .logo a{
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #ham_btn:checked ~ header .container .nav_mobile{
+        right: 0;
+    }
+    #ham_btn:checked ~ .body_background{
+        display: block;
+        background-color: rgba(0,0,0,0.5);
+        overflow: hidden;
+    } 
+    .nav_mobile{
+        width: 150px; height: 100vh; background-color: #042f59;
+        position: fixed; top: 50px; 
+        right: -150px;
+        transition: all 0.5s; 
+        z-index: 999; display: block; overflow: hidden;
+        box-sizing: border-box; padding: 20px 0 0 30px;
+    }
+
+    /*여기부터 햄버거 버튼 세부디자인*/
+    .ham_btn{
+        display: block;
+        width: 50px; height: 50px; 
+        position: relative;
+        float: right;
+        box-sizing: border-box; 
+        padding: 15px 0 0 15px;
+        /* background-color: #72a6d4; */
+    }
+    .menu_trigger,
+    .menu_trigger span {
+        display : inline-block;
+        transition : all .4s;
+        box-sizing : border-box;
+    }
+    .menu_trigger {
+        position : relative;
+        width : 20px;
+        height : 20px;
+        /* background-color: #0071f1; */
+    }
+    .menu_trigger span {
+        position : absolute;
+        left : 0;
+        width : 100%;
+        height : 3px;
+        background-color : #ccc;
+        border-radius : 4px;
+    }
+    .menu_trigger span:nth-of-type(1) {
+        top : 0;
+    }
+    .menu_trigger span:nth-of-type(2) {
+        top : 8px;
+    }
+    .menu_trigger span:nth-of-type(3) {
+        bottom : 0;
+    }
+    .menu_trigger.active span:nth-of-type(1) {
+        -webkit-transform : translateY(9px) rotate(-45deg);
+        transform : translateY(9px) rotate(-45deg);
+    }
+    .menu_trigger.active span:nth-of-type(2) {
+        opacity : 0;
+    }
+    .menu_trigger.active span:nth-of-type(3) {
+        -webkit-transform : translateY(-8px) rotate(45deg);
+        transform : translateY(-8px) rotate(45deg);
+    }
+    /*여기까지 햄버거 버튼세부디자인*/ 
+
+    #menubtn01, #menubtn02, #menubtn03, #menubtn04, #menubtn05{display: none;}
+  
+    #menubtn01:checked ~ .menu .menu01 p{height: 40px;}
+    #menubtn02:checked ~ .menu .menu02 p{margin: 5px 0; height: 30px;}
+    #menubtn03:checked ~ .menu .menu03 p{margin: 5px 0; height: 30px;}
+    #menubtn04:checked ~ .menu .menu04 p{margin: 5px 0; height: 30px;}
+    #menubtn05:checked ~ .menu .menu05 p{margin: 5px 0; height: 30px;}
+
+    #menubtn01:checked ~ .menu .menu01 label{color: #72a6d4; font-weight: 500;}
+    #menubtn02:checked ~ .menu .menu02 label{color: #72a6d4; font-weight: 500;}
+    #menubtn03:checked ~ .menu .menu03 label{color: #72a6d4; font-weight: 500;}
+    #menubtn04:checked ~ .menu .menu04 label{color: #72a6d4; font-weight: 500;}
+    #menubtn05:checked ~ .menu .menu05 label{color: #72a6d4; font-weight: 500;}
+  
+    .nav_mobile .menu div label{
+        font-size: 22px; display: block; width: 270px; height: 60px; 
+        line-height: 60px; color: white; font-weight: 400;
+    }
+    .nav_mobile .menu div p{
+        font-size: 15px; overflow: hidden; height: 0;
+        transition: all 0.3s; line-height: 40px;
+    }
+    .nav_mobile .menu div p a{color: white;}
+}
+

@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이상욱의 포트폴리오</title>
 
+    <link rel="stylesheet" href="css/index.css">
+
     <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 라이브러리 -->
     <script type="text/javascript">
-    $(document).ready( function() {
-        $("#headers").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
-        $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
-    });
+        $(document).ready( function() {
+            $("#headers").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
+            $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+        });
     </script>
 
 </head>
 <body>
     
-    <div id="headers"></div>
+    <div id="headers" class="header"></div>
 
-    <h2>이상욱의 포트폴리오 입니다.</h2>
-    <h2>스시먹고싶다</h2>
+    <section class="wrap">
+        <h2>이상욱의 포트폴리오 입니다.</h2>
+    </section>
 
 </body>
 </html>
