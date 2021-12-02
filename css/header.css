@@ -19,14 +19,17 @@ header{
 .logo{
     width: 200px; height: 60px;
     float: left;
-    background-color: #ddd;
+    /* background-color: #ddd; */
     border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0 0 0 10px;
 }
 .logo a{
-    text-align: center;
+    /* text-align: center; */
     line-height: 60px;
     font-size: 1.2rem;
     font-weight: 600;
+    letter-spacing: 1.5px;
 }
 
 #ham_btn{display: none;}
@@ -35,8 +38,7 @@ header{
 
 
 .nav_web{
-    float: right; width: 400px; height: 60px; 
-    /* background-color: #bbb; */
+    float: right; width: 400px; height: 60px;
 }
 .nav_web div{
     float: left;
@@ -50,7 +52,7 @@ header{
     text-align: center;
     line-height: 60px;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 300;
     transition: all 0.3s;
 }
 .nav_web div:hover a{
@@ -70,7 +72,7 @@ header{
 
 /* 화면넓이 1900px이상 와이드 */
 @media (min-width:1900px){
-    .container, footer>.container, .wrap{
+    .wrap{
         width: 1900px; margin: 0 auto;
     }
 }
@@ -91,11 +93,12 @@ header{
     }
     .logo{
         margin: 5px 0 0 5px;
-        height: 40px; box-sizing: border-box;
+        height: 40px; 
+        box-sizing: border-box;
     }
     .logo a{
         height: 40px;
-        line-height: 40px;
+        line-height: 2.3;
     }
 
     
