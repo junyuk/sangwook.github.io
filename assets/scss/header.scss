@@ -6,6 +6,11 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 /*---------------------기본세팅-----------------------*/
 
+// 햄버거버튼 
+#ham_btn{
+    display: none;
+}
+
 /* header */
 header{
     width:100%;
@@ -15,52 +20,48 @@ header{
     overflow: hidden;
     box-sizing: border-box;
     padding: 10px;
-}
-.logo{
-    width: 200px; height: 60px;
-    float: left;
-    /* background-color: #ddd; */
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 0 0 0 10px;
-}
-.logo a{
-    /* text-align: center; */
-    line-height: 60px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-}
-
-#ham_btn{display: none;}
-.ham_btn{display: none;}
-
-
-
-.nav_web{
-    float: right; width: 400px; height: 60px;
-}
-.nav_web div{
-    float: left;
-    width: 33.33%;
-    height: auto;
-}
-.nav_web div a{
-    display: block;
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    transition: all 0.3s;
-}
-.nav_web div:hover a{
-    color: #aaa;
-}
-
-.nav_mobile{
-    display: none;
+    .logo{
+        width: 200px; height: 60px;
+        float: left;
+        /* background-color: #ddd; */
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 0 0 0 10px;
+        a{
+            /* text-align: center; */
+            line-height: 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+    }
+    .ham_btn{
+        display: none;
+    }
+    .nav_web{
+        float: right; width: 400px; height: 60px;
+        div{
+            float: left;
+            width: 33.33%;
+            height: auto;
+            a{
+                display: block;
+                width: 100%;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                font-size: 1.2rem;
+                font-weight: 300;
+                transition: all 0.3s;
+            }
+            &:hover a{
+                color: #aaa;
+            }
+        }
+    }
+    .nav_mobile{
+        display: none;
+    }
 }
 
 
@@ -80,6 +81,12 @@ header{
 /* 화면넓이 ~1024px */
 @media (max-width: 1024px){
 
+    #ham_btn:checked ~ header .nav_mobile {
+        height: 100vh;
+        opacity: 1;
+        padding: 20px;
+      }
+
     .nav_web{display: none;}
 
     header{
@@ -90,95 +97,89 @@ header{
         background-color: #fff;
         box-shadow: 0 0 10px #ddd;
         border-radius: 10px;
-    }
-    .logo{
-        margin: 5px 0 0 5px;
-        height: 40px; 
-        box-sizing: border-box;
-    }
-    .logo a{
-        height: 40px;
-        line-height: 2.3;
+        z-index: 999;
+        .logo{
+            margin: 5px 0 0 5px;
+            height: 40px; 
+            box-sizing: border-box;
+            a{
+                height: 40px;
+                line-height: 2.3;
+            }
+        }
+        .nav_mobile{
+            width: 100%; height: 0;
+            overflow: hidden;
+            display: block;
+            background-color: #000000e7;
+            position: fixed; top: 50px;
+            transition: all 0.5s; 
+            box-sizing: border-box; 
+            opacity: 0;
+            text-align: center;
+            .menu a{
+                font-size: 1rem;
+                font-weight: 300;
+                color: white;
+                margin: 20px 0;
+            }
+        }
+        
+        /*여기부터 햄버거 버튼 세부디자인*/
+        .ham_btn{
+            display: block;
+            width: 50px; height: 50px; 
+            position: relative;
+            float: right;
+            box-sizing: border-box; 
+            padding: 15px 0 0 15px;
+            /* background-color: #72a6d4; */
+            .menu_trigger{
+                display : inline-block;
+                transition : all .4s;
+                box-sizing : border-box;
+                position : relative;
+                width : 20px;
+                height : 20px;
+                /* background-color: #0071f1; */
+                span {
+                    display : inline-block;
+                    transition : all .4s;
+                    box-sizing : border-box;
+                    position : absolute;
+                    left : 0;
+                    width : 100%;
+                    height : 3px;
+                    background-color : #ccc;
+                    border-radius : 4px;
+                    &:nth-child(1){
+                        top : 0;
+                    }
+                    &:nth-child(2){
+                        top : 8px;
+                    }
+                    &:nth-child(3){
+                        bottom : 0;
+                    }
+                }
+                &.active{
+                    span:nth-of-type(1) {
+                        -webkit-transform : translateY(9px) rotate(-45deg);
+                        transform : translateY(9px) rotate(-45deg);
+                    }
+                    span:nth-of-type(2) {
+                        opacity : 0;
+                    }
+                    span:nth-of-type(3) {
+                        -webkit-transform : translateY(-8px) rotate(45deg);
+                        transform : translateY(-8px) rotate(45deg);
+                    }
+                }
+            }
+        } /*여기까지 햄버거 버튼세부디자인*/ 
     }
 
-    
-    .nav_mobile{
-        width: 100%; height: 0;
-        overflow: hidden;
-        display: block;
-        background-color: #000000e7;
-        position: fixed; top: 50px;
-        transition: all 0.5s; 
-        z-index: 999; 
-        box-sizing: border-box; 
-        opacity: 0;
-        text-align: center;
-    }
 
-    .nav_mobile .menu a{
-        font-size: 1rem;
-        font-weight: 300;
-        color: white;
-        margin: 20px 0;
-    }
-
-    #ham_btn:checked ~ header .nav_mobile{
-        height: 100vh;
-        opacity: 1;
-        padding: 20px;
-    }
-
-    /*여기부터 햄버거 버튼 세부디자인*/
-    .ham_btn{
-        display: block;
-        width: 50px; height: 50px; 
-        position: relative;
-        float: right;
-        box-sizing: border-box; 
-        padding: 15px 0 0 15px;
-        /* background-color: #72a6d4; */
-    }
-    .menu_trigger,
-    .menu_trigger span {
-        display : inline-block;
-        transition : all .4s;
-        box-sizing : border-box;
-    }
-    .menu_trigger {
-        position : relative;
-        width : 20px;
-        height : 20px;
-        /* background-color: #0071f1; */
-    }
-    .menu_trigger span {
-        position : absolute;
-        left : 0;
-        width : 100%;
-        height : 3px;
-        background-color : #ccc;
-        border-radius : 4px;
-    }
-    .menu_trigger span:nth-of-type(1) {
-        top : 0;
-    }
-    .menu_trigger span:nth-of-type(2) {
-        top : 8px;
-    }
-    .menu_trigger span:nth-of-type(3) {
-        bottom : 0;
-    }
-    .menu_trigger.active span:nth-of-type(1) {
-        -webkit-transform : translateY(9px) rotate(-45deg);
-        transform : translateY(9px) rotate(-45deg);
-    }
-    .menu_trigger.active span:nth-of-type(2) {
-        opacity : 0;
-    }
-    .menu_trigger.active span:nth-of-type(3) {
-        -webkit-transform : translateY(-8px) rotate(45deg);
-        transform : translateY(-8px) rotate(45deg);
-    }
-    /*여기까지 햄버거 버튼세부디자인*/ 
 }
 
 

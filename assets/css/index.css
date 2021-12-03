@@ -37,16 +37,19 @@ body {
   width: 100%;
   height: 700px;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   margin: 0;
-  /* background-color: #ccc; */
 }
 
 .visual_box .visual li {
   width: 100%;
-  height: 100vh;
-  background-color: aquamarine;
+  height: auto;
   position: relative;
+}
+
+.visual_box .visual li:nth-child(1) {
+  background-color: aquamarine;
 }
 
 .visual_box .visual li:nth-child(2) {
