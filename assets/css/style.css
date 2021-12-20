@@ -1,29 +1,137 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
+body {
+  min-width: 320px;
+  line-height: normal;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
+body,
+input,
+textarea,
+select,
+table,
+button,
+code {
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+ul,
+ol,
 li {
   list-style: none;
+}
+
+a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
   display: block;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
 }
 
 img {
   display: block;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  display: block;
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-body {
-  font-family: 'Noto Sans KR', sans-serif;
+button:disabled {
+  cursor: not-allowed;
 }
 
-/*---------------------기본세팅-----------------------*/
+select,
+input,
+textarea,
+button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:disabled {
+  background-color: rgba(255, 255, 255, 0);
+  cursor: not-allowed;
+}
+
+select {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input,
+textarea {
+  font-size: inherit;
+  border: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  /* Chrome, Safari, Firefox */
+  color: #c9c9c9;
+  opacity: 1;
+}
+
+input[readonly]::placeholder, input:disabled::placeholder,
+textarea[readonly]::placeholder,
+textarea:disabled::placeholder {
+  /* Chrome, Safari, Firefox */
+  color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+input[readonly]:-ms-input-placeholder, input:disabled:-ms-input-placeholder,
+textarea[readonly]:-ms-input-placeholder,
+textarea:disabled:-ms-input-placeholder {
+  /* IE, Edge */
+  color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+input::-ms-clear, input::-ms-reveal,
+textarea::-ms-clear,
+textarea::-ms-reveal {
+  /* IE, Edge */
+  display: none;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button,
+textarea::-webkit-inner-spin-button,
+textarea::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 #ham_btn {
   display: none;
 }
@@ -44,7 +152,6 @@ header .logo {
   height: 60px;
   float: left;
   /* background-color: #ddd; */
-  border-radius: 10px;
   box-sizing: border-box;
   padding: 0 0 0 10px;
 }
@@ -120,7 +227,6 @@ header .nav_mobile {
     padding: 0px;
     background-color: #fff;
     box-shadow: 0 0 10px #ddd;
-    border-radius: 10px;
     z-index: 999;
     /*여기부터 햄버거 버튼 세부디자인*/
     /*여기까지 햄버거 버튼세부디자인*/
@@ -203,31 +309,6 @@ header .nav_mobile {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-  display: block;
-}
-
-img {
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-/*---------------------기본세팅-----------------------*/
 .header {
   width: 100%;
   height: auto;
@@ -279,4 +360,4 @@ body {
     margin-top: 50px;
   }
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=style.css.map */

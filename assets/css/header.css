@@ -44,7 +44,6 @@ header .logo {
   height: 60px;
   float: left;
   /* background-color: #ddd; */
-  border-radius: 10px;
   box-sizing: border-box;
   padding: 0 0 0 10px;
 }
@@ -120,7 +119,6 @@ header .nav_mobile {
     padding: 0px;
     background-color: #fff;
     box-shadow: 0 0 10px #ddd;
-    border-radius: 10px;
     z-index: 999;
     /*여기부터 햄버거 버튼 세부디자인*/
     /*여기까지 햄버거 버튼세부디자인*/
