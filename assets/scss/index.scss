@@ -1,0 +1,57 @@
+@import "./header.scss";
+
+*{margin: 0; padding: 0;}
+li{list-style: none; display: block;}
+img{display: block;}
+a {text-decoration: none; color: black; display: block;}
+body{font-family: 'Noto Sans KR', sans-serif;}
+
+
+
+/*---------------------기본세팅-----------------------*/
+
+.header{
+    width: 100%; height: auto;
+}
+
+.wrap{
+    width: 100%; height: auto;
+    text-align: center;
+    .visual_box{
+        width: 100%; height: 700px; 
+        position: relative; 
+        z-index: 1;
+        overflow: hidden;
+        margin: 0;
+        .visual li{
+            width: 100%; height: auto; 
+            position: relative;
+            &:nth-child(1){
+                background-color: aquamarine;
+            }
+            &:nth-child(2){
+                background-color: rgb(201, 135, 12);
+            }
+            &:nth-child(3){
+                background-color: rgb(97, 187, 45);
+            }
+        }
+    }
+    .asdasd{
+        width: 100%; height: 100px; 
+        background-color: aqua;
+    }
+}
+
+
+
+
+
+/* media quary */
+
+/* 화면넓이 ~1280px */
+@media (max-width: 1024px){
+    .visual_box{
+        margin-top: 50px;
+    }
+}
