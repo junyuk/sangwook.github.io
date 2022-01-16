@@ -170,13 +170,13 @@ header .ham_btn {
 
 header .nav_web {
   float: right;
-  width: 400px;
+  width: 500px;
   height: 60px;
 }
 
 header .nav_web div {
   float: left;
-  width: 33.33%;
+  width: 25%;
   height: auto;
 }
 
