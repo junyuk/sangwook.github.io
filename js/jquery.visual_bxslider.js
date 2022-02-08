@@ -19,7 +19,7 @@
     slideMargin: 0,
     startSlide: 0,
     randomStart: false,
-    captions: false,
+    captions: true,
     ticker: false,
     tickerHover: false,
     adaptiveHeight: false,
@@ -43,7 +43,7 @@
     ariaHidden: true,
 
     // KEYBOARD
-    keyboardEnabled: false,
+    keyboardEnabled: true,
 
     // PAGER
     pager: true,

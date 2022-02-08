@@ -1,45 +1,79 @@
-.header{
-    width: 100%; height: auto;
-}
-
-.wrap{
-    width: 100%; height: auto;
-    text-align: center;
-    .visual_box{
-        width: 100%; height: 700px; 
-        position: relative; 
-        z-index: 1;
-        overflow: hidden;
-        margin: 0;
-        .visual li{
-            width: 100%; height: auto; 
-            position: relative;
-            &:nth-child(1){
-                background-color: aquamarine;
+.wrap {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  .visual_box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0;
+    @media (max-width: 1024px) {
+      margin-top: 50px;
+    }
+    .visual {
+      .visual-item {
+        width: 100%;
+        height: auto;
+        .item-img {
+          @media (min-width: 768px) {
+            &.mobile {
+              display: none;
             }
-            &:nth-child(2){
-                background-color: rgb(201, 135, 12);
+          }
+          @media (max-width: 768px) {
+            &.web {
+              display: none;
             }
-            &:nth-child(3){
-                background-color: rgb(97, 187, 45);
-            }
+          }
         }
+        .visual-title {
+          position: absolute;
+          top: 20%;
+          left: 5%;
+          font-size: 5rem;
+          font-weight: 800;
+          text-align: left;
+          color: #fff;
+          text-shadow: rgba($color: #000000, $alpha: 0.2) 0 0 10px;
+          @media (max-width: 1280px) {
+            font-size: 3rem;
+          }
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+        }
+        .more-view {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          top: 54%;
+          left: 5%;
+          padding: 0 0 0 5px;
+          transition: all 0.3s;
+          color: #fff;
+          font-weight: 400;
+          text-shadow: rgba($color: #000000, $alpha: 0.2) 0 0 10px;
+          i {
+            margin-right: 10px;
+          }
+          h2 {
+            margin-right: 10px;
+          }
+          &:hover {
+            margin-top: -10px;
+          }
+          @media (max-width: 1600px) {
+            top: 75%;
+          }
+          @media (max-width: 768px) {
+            font-size: 0.7rem;
+            top: 80%;
+          }
+        }
+      }
     }
-    .asdasd{
-        width: 100%; height: 100px; 
-        background-color: aqua;
-    }
-}
-
-
-
-
-
-/* media quary */
-
-/* 화면넓이 ~1280px */
-@media (max-width: 1024px){
-    .visual_box{
-        margin-top: 50px;
-    }
+  }
 }
