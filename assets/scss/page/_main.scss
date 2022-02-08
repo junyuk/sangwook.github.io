@@ -1,4 +1,4 @@
-.wrap {
+.main {
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -10,7 +10,7 @@
     z-index: 1;
     overflow: hidden;
     margin: 0;
-    @media (max-width: 1024px) {
+    @media all and (max-width: 1024px) {
       margin-top: 50px;
     }
     .visual {
@@ -18,12 +18,12 @@
         width: 100%;
         height: auto;
         .item-img {
-          @media (min-width: 768px) {
+          @media all and (min-width: 768px) {
             &.mobile {
               display: none;
             }
           }
-          @media (max-width: 768px) {
+          @media all and (max-width: 768px) {
             &.web {
               display: none;
             }
@@ -38,10 +38,10 @@
           text-align: left;
           color: #fff;
           text-shadow: rgba($color: #000000, $alpha: 0.2) 0 0 10px;
-          @media (max-width: 1280px) {
+          @media all and (max-width: 1280px) {
             font-size: 3rem;
           }
-          @media (max-width: 768px) {
+          @media all and (max-width: 768px) {
             font-size: 2rem;
           }
         }
@@ -65,10 +65,10 @@
           &:hover {
             margin-top: -10px;
           }
-          @media (max-width: 1600px) {
+          @media all and (max-width: 1600px) {
             top: 75%;
           }
-          @media (max-width: 768px) {
+          @media all and (max-width: 768px) {
             font-size: 0.7rem;
             top: 80%;
           }
