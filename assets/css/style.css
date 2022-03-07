@@ -348,7 +348,7 @@ header .nav_mobile {
   height: auto;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 769px) {
   .main .visual_box .visual .visual-item .item-img.mobile {
     display: none;
   }
